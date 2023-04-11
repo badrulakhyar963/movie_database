@@ -1,16 +1,21 @@
 
+import { useState } from "react";
 import AddMovieForm from "../components/AddMovieForm/AddMovieForm";
 import Footer from "../components/footer/Footer";
 import Hero from "../components/hero/Hero";
 import Movies from "../components/movies/Movies";
 import Navbar from "../components/navbar/Navbar";
+import data from "../components/utils/constant/data";
 
 function Main() {
+
+    const [movies, setMovies] = useState(data);
+
     return (
         <main>
             <Hero />
-            <Movies />
-            <AddMovieForm />
+            <Movies movies={movies} setMovies={setMovies} />
+            <AddMovieForm movies={movies} setMovies={setMovies}/>
         </main>
     );
 }
