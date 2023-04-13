@@ -86,9 +86,6 @@ function AddMovieForm(props) {
     setIsPosterError(false);
     }
   }
-  // const { title, date, poster, type } = formData;
-  // const {isTitleError,isDateError,isPosterError,isTypeError} = isError;
-
     return (
       <div className={stayle.container}>
         <section className={stayle.AddMovieForm}>
