@@ -1,0 +1,78 @@
+/* Tampilan Mobile */
+.container {
+    margin: 1rem;
+    padding: 1rem;
+    color: black;
+    background-color: #EEEEEE;
+  }
+  
+  .formCovid {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formCovid__left {
+    display: none;
+  }
+  
+  .formCovid__image {
+    height: 400px;
+    width: 400px;
+    border-radius: 20px;
+  }
+  
+  .formCovid__title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .formCovid__group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  .formCovid__label {
+    margin-bottom: 1rem;
+  }
+  
+  .formCovid__input {
+    outline: none;
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #64748b;
+    color: blue;
+  }
+  
+  .formCovid__button {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    background-color:black;
+  }
+  
+  /* Tampilan Laptop */
+  @media (min-width: 992px) {
+    .formCovid {
+      margin: 5rem auto;
+    }
+  
+    .formCovid {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .formCovid__left {
+      display: block;
+      flex-basis: 60%;
+    }
+  
+    .formCovid__right {
+      flex-basis: 40%;
+    }
+  }

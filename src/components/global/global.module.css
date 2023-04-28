@@ -1,0 +1,27 @@
+.global {
+    margin-bottom: 1rem;
+  }
+  
+  .global__status {
+    color: blue;
+    font-size: 1.95rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .global__total {
+    color: #575965;
+  }
+
+  @media (min-width: 768px) {
+    .global {
+        flex-basis: 50%;
+      }
+    }
+
+  @media (min-width: 992px) {
+    .global {
+        flex-basis: 25%;
+        padding: 1rem;
+      }
+
+    }

@@ -1,0 +1,43 @@
+/* tampilan Mobile */
+.container {
+    background-color:#222831;
+    padding: 1rem;
+    color: #F8F8F6;
+}
+
+.footer__brand {
+    margin-bottom: 1rem;
+}
+
+.footer__author {
+    margin-bottom: 1rem;
+  }
+  
+.footer__list {
+    list-style: none;
+}
+
+.footer__item {
+    margin-bottom: 1rem;
+}
+
+/* tampilan tablet */
+@media(min-width: 768px) {
+    .footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer__brand {
+        margin: 0;
+    }
+    .footer__list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer__item {
+        margin: 0 1rem;
+    }
+}

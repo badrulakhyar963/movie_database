@@ -1,0 +1,49 @@
+/* Small Screen */
+.container {
+    margin: 1rem;
+    background-color: #F8F8F6;
+  }
+  
+  .globals {
+    margin: 5rem 0;
+    text-align: center;
+  }
+  
+  .globals__title {
+    margin-bottom: 1rem;
+    font-size: 2.44rem;
+    color: black;
+  }
+  .globals__detail {
+    margin-bottom: 1rem;
+    font-size: 2 rem;
+    color: black;
+  }
+  
+  .globals__container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Medium Screen */
+  @media (min-width: 768px) {
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .globals__container {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  /* Large Screen */
+  @media (min-width: 992px) {
+    .container {
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+  }
