@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import stayle from "./Navbar.module.css";
 
 function Navbar () {
@@ -10,11 +11,21 @@ function Navbar () {
 
                 <div>
                     <ul className={stayle.navbar__list}>
-                        <li className={stayle.navbar__item}>Home</li>
-                        <li className={stayle.navbar__item}>Add movie</li>
-                        <li className={stayle.navbar__item}>Popular</li>
-                        <li className={stayle.navbar__item}>Now Playing</li>
-                        <li className={stayle.navbar__item}>Top Rated</li>
+                        <li className={stayle.navbar__item}>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li className={stayle.navbar__item}>
+                            <Link to="movie/create">Add movie</Link>
+                        </li>
+                        <li className={stayle.navbar__item}>
+                            <Link to="movie/popular">Popular</Link>
+                        </li>
+                        <li className={stayle.navbar__item}>
+                            <Link to="movie/now">Now Playing</Link>
+                        </li>
+                        <li className={stayle.navbar__item}>
+                            <Link to="movie/top">Top Rated</Link>
+                        </li>
                     </ul>
                 </div>
             
