@@ -11,54 +11,22 @@ function AddMovieForm(props) {
   const [title, setTitle] = useState("");
   // membuat state date
   const [date, setDate] = useState("");
-  // membuat state type
-  const [type, setType] = useState("");
+  // membuat state genre
+  const [genre, setGenre] = useState("");
   // membuat state poster
   const [poster, setPoster] = useState("");
 
-  // const [formData, setFormData] = useState([
-  //   {
-  //     title: "",
-  //     isTitleError: false,
-  //   },
-  //   {
-  //     date: "",
-  //     isDateError: false,
-  //   },
-  //   {
-  //     type: "",
-  //     isTypeError: false,
-  //   },
-  //   {
-  //     poster: "",
-  //     isPosterError: false,
-  //   },
-    
-  // ]);
 
   // membuat state title erroe/empty
   const [isTitleError, setIsTitleError] = useState(false);
   // membuat state date erroe/empty
   const [isDateError, setIsDateError] = useState(false);
-  // membuat state type erroe/empty
-  const [isTypeError, setIsTypeError] = useState(false);
+  // membuat state genre erroe/empty
+  const [isGenreError, setIsGenreError] = useState(false);
   // membuat state poster erroe/empty
   const [isPosterError, setIsPosterError] = useState(false);
 
-  // function handleChange(e) {
-  //   // Destructing name dan value.
-  //   const { name, value } = e.target;
 
-    /**
-     * Mengupdate state berupa object:
-     * - Menggunakan spread operator:
-     * - Update property berdasarkan apapun nilai name.
-     */
-    // setFormData({
-    //   ...formData,
-    //   [name]: value,
-    // });
-  // }
   // membuat function handleTitle
   function handleTitle (e) {
     setTitle(e.target.value);
@@ -67,9 +35,9 @@ function AddMovieForm(props) {
   function handleDate(e) {
     setDate(e.target.value);
   }
-  // membuat fuction handleType
-  function handleType(e) {
-    setType(e.target.value);
+  // membuat fuction handleGenre
+  function handleGenre(e) {
+    setGenre(e.target.value);
   }
   // membuat function handlePoster
   function handlePoster(e) {
@@ -89,13 +57,13 @@ function AddMovieForm(props) {
       setIsDateError(true);
     }
     // Jika genre kosong maka set error title true
-    else if (type === "") {
+    else if (genre === "") {
       setIsDateError(false);
-      setIsTypeError(true);
+      setIsGenreError(true);
     }
     // Jika poster kosong maka set error title true
     else if (poster === "") {
-      setIsTypeError(false);
+      setIsGenreError(false);
       setIsPosterError(true);
     }
     // Jika data diisi,lakukan tambah data
@@ -105,7 +73,7 @@ function AddMovieForm(props) {
       id: nanoid(8),
       title: title,
       year: date,
-      type: type,
+      type: "Movie",
       poster: poster,
     };
     
@@ -114,13 +82,10 @@ function AddMovieForm(props) {
     setMovies([...movies, movie]);
     setIsTitleError(false);
     setIsDateError(false);
-    setIsTypeError(false);
+    setIsGenreError(false);
     setIsPosterError(false);
     }
   }
-  // const { title, date, poster, type } = formData;
-  // const {isTitleError,isDateError,isPosterError,isTypeError} = isError;
-
     return (
       <div className={stayle.container}>
         <section className={stayle.AddMovieForm}>
@@ -159,13 +124,13 @@ function AddMovieForm(props) {
 
               <div className={stayle.AddMovieForm__group}>
                 <label className={stayle.AddMovieForm__label}>Genre</label>
-                <select onChange={handleType} className={stayle.AddMovieForm__input} value={type}>
+                <select onChange={handleGenre} className={stayle.AddMovieForm__input} value={genre}>
                   <option value="movie">Action</option>
                   <option value="series">Drama</option>
                   <option value="series">Horor</option>
                   <option value="series">Comedy</option>
                 </select>              
-                { isTypeError && <alert>Genre wajid dipilih</alert>}
+                { isGenreError && <alert>Genre wajid dipilih</alert>}
               </div>
 
               <div className={stayle.AddMovieForm__group}>
