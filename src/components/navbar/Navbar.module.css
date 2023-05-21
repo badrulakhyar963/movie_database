@@ -18,6 +18,11 @@
     font-size:medium;
 }
 
+.navbar__link{
+    color: white;
+    text-decoration: none;
+}
+
 /* tampilan tablet */
 @media(min-width: 768px) {
     .navbar {
