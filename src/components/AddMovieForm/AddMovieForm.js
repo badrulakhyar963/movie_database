@@ -1,6 +1,7 @@
 import { useState } from "react";
 import stayle from "./AddMovieForm.module.css"
 import { nanoid } from "nanoid";
+import Button from "../ui/Button";
 
 // Menangkap props
 function AddMovieForm(props) {
@@ -149,7 +150,7 @@ function AddMovieForm(props) {
               </div>
 
               <div>
-                <button className={stayle.AddMovieForm__button}>Add Movie</button>
+                <Button variant="primary" sizes="md">Add Movie</Button>
               </div>
             </form>
           </div>

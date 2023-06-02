@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import stayle from "./Hero.module.css"
+import Button from "../ui/Button";
+import StyledHero from "./Hero.styled";
 
 function Hero() {
 
@@ -17,22 +18,22 @@ function Hero() {
 },[]);
     
     return(
-        <div className={stayle.container}>
-            <section className={stayle.hero}>
-                <div className={stayle.hero__left}>
-                    <h1 className={stayle.hero__title}>{movie.Title}</h1>
-                    <h3 className={stayle.hero__genre}>Genre :{movie.Genre}</h3>
-                    <p className={stayle.hero__description}>
+        <StyledHero>
+            <section className="hero">
+                <div className="hero__left">
+                    <h1 className="hero__title">{movie.Title}</h1>
+                    <h3 className="hero__genre">Genre :{movie.Genre}</h3>
+                    <p className="hero__description">
                         {movie.Plot}
                     </p>
-                    <button className={stayle.hero__button}>Tonton</button>
+                    <Button variant="primary" sizes="md">Tonton</Button>
                 </div >
                     
-                <div className={stayle.hero__right}>
-                <img className={stayle.hero__image} src={movie.Poster} alt={movie.Title}></img>
+                <div className="hero__right">
+                <img className="hero__image" src={movie.Poster} alt={movie.Title}></img>
                 </div>
             </section>
-        </div>
+        </StyledHero>
     );
 }
 
