@@ -2,14 +2,13 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Movies from "../../components/movies/Movies";
 import Hero from "../../components/hero/Hero";
+import ENDPOINTS from "../../components/utils/constant/endpoint";
 
 function NowPlaying() {
  const [movies,setMovies] = useState([]);
-  const API_KEY = process.env.REACT_APP_API_KEY;
-  const URL =`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}`;
 
   async function fetchNowPlaying() {
-    const response = await axios(URL);
+    const response = await axios(ENDPOINTS.NOW_PLAYING);
     console.log(response)
 
     setMovies(response.data.results);
@@ -22,7 +21,7 @@ function NowPlaying() {
     return (
     <div>
       <Hero/>
-      <Movies movies={movies} setMovies={setMovies} />
+      <Movies title="Now Playing Movies" movies={movies} setMovies={setMovies} />
     </div>
   );
 }

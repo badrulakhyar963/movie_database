@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import StyledNavbar from "./Navbar.styled";
 
+
 function Navbar () {
     return (
         <StyledNavbar>

@@ -32,7 +32,7 @@ function Hero() {
         <StyledHero>
             <section className="hero">
                 <div className="hero__left">
-                    <h1 className="hero__title">{movie.Title}</h1>
+                    <h1 className="hero__title">{movie.title}</h1>
                     <h3 className="hero__genre">Genre :{genres}</h3>
                     <p className="hero__description">
                         {movie.overview}
@@ -45,7 +45,6 @@ function Hero() {
                     target="_blank">
                         Watch
                     </Button>
-                     
                 </div >
                     
                 <div className="hero__right">

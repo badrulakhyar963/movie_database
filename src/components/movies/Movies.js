@@ -4,7 +4,7 @@ import { nanoid } from "nanoid";
 
 function Movies(props){
     // destructing props
-    const {movies, setMovies } = props;
+    const {title, movies, setMovies } = props;
 
     function tambahFilm() {
       const movie = {
@@ -22,7 +22,7 @@ function Movies(props){
     return(
         <div className={stayle.container}>
             <section className={stayle.movies}>
-                <h2 className={stayle.movies__title}>lates Movie</h2>
+                <h2 className={stayle.movies__title}>{title}</h2>
                 <div className={stayle.movie__container}>
                     {
                         movies.map(function(movie) {
