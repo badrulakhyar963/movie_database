@@ -1,10 +1,14 @@
+import { useSelector } from "react-redux";
 import Movie from "../movie/movie";
 import stayle from "./Movies.module.css";
 import { nanoid } from "nanoid";
 
+
 function Movies(props){
+    
     // destructing props
-    const {title, movies, setMovies } = props;
+    const {title, setMovies } = props;
+    const movies = useSelector((store)=> store.movies.movies);
 
     function tambahFilm() {
       const movie = {

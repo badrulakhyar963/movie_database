@@ -19,7 +19,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/movie/create" element={<CreateMovie/>} />
+          <Route path="/movie/create" element={<CreateMovie />} />
           <Route path="/movie/popular" element={<Popular/>} />
           <Route path="/movie/now" element={<NowPlaying/>} />
           <Route path="/movie/top" element={<TopRated/>} />

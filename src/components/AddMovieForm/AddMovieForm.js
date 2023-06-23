@@ -2,11 +2,16 @@ import { useState } from "react";
 import stayle from "./AddMovieForm.module.css"
 import { nanoid } from "nanoid";
 import Button from "../ui/Button";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addMovie } from "../../feature/movieSlice";
 
 // Menangkap props
-function AddMovieForm(props) {
-  // destructing props
-  const {movies, setMovies } = props;
+function AddMovieForm() {
+
+  const dispatch = useDispatch();
+
+  const Navigation = useNavigate();
 
   // membaut state object
   const[formData,setFormData] = useState({
@@ -37,6 +42,7 @@ function AddMovieForm(props) {
       ...formData,
       [name]:value,
     })
+
   }
 
   const {title,date,genre,poster} = formData
@@ -74,7 +80,7 @@ function AddMovieForm(props) {
       }
   }
 
-  function addMovie() {
+  function submit() {
     const movie = {
       id: nanoid(8),
       title: title,
@@ -82,17 +88,14 @@ function AddMovieForm(props) {
       type: "Movie",
       poster: poster,
     };
-    
-    // menambahkan movie ke state movies
-    // menggunakan spread operator untuk meng-copy dan merge array
-    setMovies([...movies, movie]);
+    dispatch(addMovie(movie));
   }
   // membuat function HandleSubmit
   function handleSubmit(e) {
     // untuk mencegah perilaku default yaitu refresh menggunakan preventDefault
     e.preventDefault();
 
-    validate() && addMovie ();
+    validate() && submit ();
   }
     return (
       <div className={stayle.container}>
@@ -157,6 +160,7 @@ function AddMovieForm(props) {
         </section>
       </div>
     );
+    Navigation("/");
   }
   
   export default AddMovieForm;
