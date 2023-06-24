@@ -1,27 +1,28 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Movies from "../../components/movies/Movies";
 import Hero from "../../components/hero/Hero";
 import ENDPOINTS from "../../components/utils/constant/endpoint";
+import { useDispatch } from "react-redux";
+import { updateMovies } from "../../feature/movieSlice";
 
 function TopRated() {
- const [movies,setMovies] = useState([]);
+  //  Buat dispatch
+  const dispatch = useDispatch();
 
   async function fetchTopRated() {
     const response = await axios(ENDPOINTS.TOP_RATED);
-    console.log(response)
-
-    setMovies(response.data.results);
+    console.log(response);
+    dispatch(updateMovies(response.data.results));
   }
-  useEffect(function (){
+  useEffect(function () {
     fetchTopRated();
+  }, []);
 
-  },[]);
-
-    return (
+  return (
     <div>
-      <Hero/>
-      <Movies title="Top Rated Movies" movies={movies} setMovies={setMovies} />
+      <Hero />
+      <Movies title="Top Rated Movies" />
     </div>
   );
 }
