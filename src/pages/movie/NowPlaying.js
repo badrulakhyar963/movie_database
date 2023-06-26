@@ -1,27 +1,28 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Movies from "../../components/movies/Movies";
 import Hero from "../../components/hero/Hero";
 import ENDPOINTS from "../../components/utils/constant/endpoint";
+import { useDispatch } from "react-redux";
+import { updateMovies } from "../../feature/movieSlice";
 
 function NowPlaying() {
- const [movies,setMovies] = useState([]);
+  //  Buat dispatch
+  const dispatch = useDispatch();
 
   async function fetchNowPlaying() {
     const response = await axios(ENDPOINTS.NOW_PLAYING);
-    console.log(response)
-
-    setMovies(response.data.results);
+    console.log(response);
+    dispatch(updateMovies(response.data.results));
   }
-  useEffect(function (){
+  useEffect(function () {
     fetchNowPlaying();
+  }, []);
 
-  },[]);
-
-    return (
+  return (
     <div>
-      <Hero/>
-      <Movies title="Now Playing Movies" movies={movies} setMovies={setMovies} />
+      <Hero />
+      <Movies title="Now Playing Movies" />
     </div>
   );
 }
